@@ -1,0 +1,248 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b326fde4d70576a4f9d5522ae89edd9c, type: 3}
+  m_Name: TaskInfos
+  m_EditorClassIdentifier: 
+  Values:
+  - ID: 1
+    TaskType: display_title
+    Hint: 
+    ValueInt: 0
+    ValueStr: Entrance
+    Subtitle: 
+    EndActions: []
+  - ID: 2
+    TaskType: silence
+    Hint: 
+    ValueInt: 2
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 3
+    TaskType: play_sound_loop
+    Hint: 
+    ValueInt: 0
+    ValueStr: S1_PhoneRinging
+    Subtitle: 
+    EndActions: []
+  - ID: 4
+    TaskType: play_sound_loop
+    Hint: 
+    ValueInt: 0
+    ValueStr: S2_ComputerAmb
+    Subtitle: 
+    EndActions: []
+  - ID: 5
+    TaskType: ui_popup_interaction
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions:
+    - (stop_sound
+    - 3)
+  - ID: 6
+    TaskType: play_sound
+    Hint: 
+    ValueInt: 0
+    ValueStr: S2_InstrNarrative
+    Subtitle: 
+    EndActions: []
+  - ID: 7
+    TaskType: play_sound
+    Hint: 
+    ValueInt: 0
+    ValueStr: S2_PlayerSaying
+    Subtitle: 
+    EndActions: []
+  - ID: 8
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 9
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 10
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 11
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 12
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 13
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 14
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: Security Room
+    Subtitle: 
+    EndActions: []
+  - ID: 15
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: Room 1
+    Subtitle: 
+    EndActions: []
+  - ID: 16
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 17
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 18
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 19
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 20
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 21
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 22
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 23
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 24
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 25
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 26
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 27
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 28
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 29
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 30
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 31
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 32
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
+  - ID: 33
+    TaskType: 
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    Subtitle: 
+    EndActions: []
