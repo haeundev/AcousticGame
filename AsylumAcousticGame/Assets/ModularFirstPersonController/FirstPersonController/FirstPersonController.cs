@@ -29,7 +29,7 @@ public class FirstPersonController : MonoBehaviour
     public float maxLookAngle = 50f;
 
     // Crosshair
-    public bool lockCursor = true;
+    public bool lockCursor = false;
     public bool crosshair = true;
     public Sprite crosshairImage;
     public Color crosshairColor = Color.white;
@@ -153,7 +153,7 @@ public class FirstPersonController : MonoBehaviour
     {
         if(lockCursor)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            //// Cursor.lockState = CursorLockMode.Locked;
         }
 
         if(crosshair)

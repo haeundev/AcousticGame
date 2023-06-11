@@ -20,6 +20,8 @@ public class UIWindows : MonoBehaviour
 
     public static UI_Window GetWindow(int id)
     {
+        if (_windows == default)
+            return default;
         var found = _windows.First(windowComp => windowComp.ID == id);
         if (found == default)
         {
@@ -28,5 +30,13 @@ public class UIWindows : MonoBehaviour
             return default;
         }
         return found;
+    }
+
+    public static void CloseAll()
+    {
+        foreach (var window in _windows)
+        {
+            window.gameObject.SetActive(false);
+        }
     }
 }

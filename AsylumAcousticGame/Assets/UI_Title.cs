@@ -8,6 +8,7 @@ public class UI_Title : UI_Window
     {
         base.Open();
         
-        
+        gameObject.SetActive(true);
+
     }
 }

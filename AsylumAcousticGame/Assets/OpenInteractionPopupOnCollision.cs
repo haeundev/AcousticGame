@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class OpenInteractionPopupOnCollision : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             var win = UIWindows.GetWindow(4) as UI_Popup_Interaction;
+            win.SetSource(gameObject);
             win.Open();
         }
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {

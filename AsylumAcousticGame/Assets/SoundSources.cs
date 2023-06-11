@@ -53,6 +53,8 @@ public class SoundSources : MonoBehaviour
 
     public static void Stop(string name)
     {
+        if (name == default || name == string.Empty)
+            return;
         var sound = _sources.FirstOrDefault(p => p.gameObject.name == name);
         if (sound == default)
         {

@@ -8,7 +8,8 @@ public class UI_Password : UI_Window
     {
         base.Open();
         
-        
+        gameObject.SetActive(true);
+
     }
 
 }

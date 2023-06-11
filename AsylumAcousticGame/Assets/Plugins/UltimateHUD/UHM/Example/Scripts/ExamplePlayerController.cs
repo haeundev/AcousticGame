@@ -17,7 +17,7 @@ namespace GogoGaga.UHM {
 
         void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            // Cursor.lockState = CursorLockMode.Locked;
             rb = GetComponent<Rigidbody>();
             cam = Camera.main;
             UltimateHudManager.Instance.CreateCrossHair(1);

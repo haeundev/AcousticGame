@@ -9,10 +9,12 @@ using UnityEngine.SceneManagement;
 
 public class TaskDirector : MonoBehaviour
 {
+    [SerializeField] private int initialTaskID = 1;
     public static TaskDirector Instance;
     public TaskInfos taskInfos;
     private List<TaskInfo> _tasks;
     public TaskInfo CurrentTask { get; private set; }
+    public int currentGroup;
     private event Action<TaskInfo> OnTaskAcquired;
 
     private void Start()
@@ -21,14 +23,21 @@ public class TaskDirector : MonoBehaviour
         _tasks = taskInfos.Values;
         
         OnTaskAcquired += InitTask;
-        
-        
-        CurrentTask = _tasks.First();
+
+        CurrentTask = _tasks.First(p => p.ID == initialTaskID);
         OnTaskAcquired?.Invoke(CurrentTask);
+        StartCoroutine(SpawnPlayer(CurrentTask.Group.ToString()));
     }
 
     private void InitTask(TaskInfo taskInfo)
     {
+        // var prevGroup = currentGroup;
+        // if (prevGroup != currentGroup)
+        // {
+        //     currentGroup = taskInfo.Group;
+        //     StartCoroutine(SpawnPlayer(taskInfo.Group.ToString()));
+        // }
+        
         UI_Window win;
         switch (taskInfo.TaskType)
         {
@@ -43,13 +52,13 @@ public class TaskDirector : MonoBehaviour
                 }));
                 break;
             
-            case "silence":
-                StartCoroutine(WaitForSec(2, () =>
-                {
-                    Debug.Log($"Silence done.");
-                    CompleteCurrentTask();
-                }));
-                break;
+            // case "silence":
+            //     StartCoroutine(WaitForSec(2, () =>
+            //     {
+            //         Debug.Log($"Silence done.");
+            //         CompleteCurrentTask();
+            //     }));
+            //     break;
             
             case "play_sound":
                 SoundSources.Play(taskInfo.ValueStr, CompleteCurrentTask);
@@ -59,21 +68,16 @@ public class TaskDirector : MonoBehaviour
                 SoundSources.PlayLoop(taskInfo.ValueStr);
                 break;
             
-            case "ui_keypad":
-                win = UIWindows.GetWindow(2);
-                win.Open();
-                break;
+            // case "ui_keypad":
+            //     win = UIWindows.GetWindow(2);
+            //     win.Open();
+            //     break;
             
-            case "ui_password":
-                win = UIWindows.GetWindow(3);
-                win.Open();
-                break;
-            
-            case "ui_popup_interaction":
-                win = UIWindows.GetWindow(4);
-                win.Open();
-                break;
-            
+            // case "ui_password":
+            //     win = UIWindows.GetWindow(3);
+            //     win.Open();
+            //     break;
+
             case "door_open":
                 
                 break;
@@ -88,6 +92,7 @@ public class TaskDirector : MonoBehaviour
     
     public void ResetToFirstTaskOfGroup()
     {
+        UIWindows.CloseAll();
         SoundSources.StopAll();
         
         var first = _tasks.FirstOrDefault(p => p.Group == CurrentTask.Group);
@@ -146,6 +151,7 @@ public class TaskDirector : MonoBehaviour
                 break;
 
             case "spawn":
+                UIWindows.GetWindow(1).enabled = false;
                 yield return SpawnPlayer(values[1]);
                 break;
 

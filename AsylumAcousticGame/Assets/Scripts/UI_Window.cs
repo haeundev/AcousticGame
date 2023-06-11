@@ -6,6 +6,6 @@ public class UI_Window : MonoBehaviour
 
     public virtual void Open()
     {
-        
+        Debug.Log($"Open UI : {ID}");
     }
 }

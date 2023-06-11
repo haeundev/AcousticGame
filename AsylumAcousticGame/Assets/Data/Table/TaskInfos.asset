@@ -19,214 +19,241 @@ MonoBehaviour:
     Hint: 
     ValueInt: 0
     ValueStr: Guard Room
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
   - ID: 2
-    Group: 100
-    TaskType: silence
-    Hint: 
-    ValueInt: 2
-    ValueStr: 
-    NextTaskTrigger: 
-    EndActions: 
-  - ID: 3
     Group: 100
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: S1_PhoneRinging
+    SoundStop: S1_PhoneRinging
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 4
-    Group: 100
-    TaskType: play_sound_loop
-    Hint: 
-    ValueInt: 0
-    ValueStr: S2_ComputerAmb
-    NextTaskTrigger: collision
-    EndActions: 
-  - ID: 5
-    Group: 100
-    TaskType: ui_popup_interaction
-    Hint: 
-    ValueInt: 0
-    ValueStr: 
-    NextTaskTrigger: spaceKey
-    EndActions: (stop_sound, 3)
-  - ID: 6
+  - ID: 3
     Group: 100
     TaskType: play_sound
     Hint: 
     ValueInt: 0
     ValueStr: S2_InstrNarrative
+    SoundStop: 
     NextTaskTrigger: sound_end
     EndActions: 
-  - ID: 7
+  - ID: 4
     Group: 100
     TaskType: play_sound
     Hint: 
     ValueInt: 0
     ValueStr: S2_PlayerSaying
+    SoundStop: 
     NextTaskTrigger: sound_end
     EndActions: (spawn, 200)
-  - ID: 8
+  - ID: 5
     Group: 200
     TaskType: display_title
     Hint: 
     ValueInt: 0
     ValueStr: Office
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 9
-    Group: 200
-    TaskType: silence
-    Hint: 
-    ValueInt: 2
-    ValueStr: 
-    NextTaskTrigger: 
-    EndActions: 
-  - ID: 10
-    Group: 200
-    TaskType: play_sound_loop
-    Hint: 
-    ValueInt: 0
-    ValueStr: S3_PhoneKeypad
-    NextTaskTrigger: collision
-    EndActions: 
-  - ID: 11
-    Group: 200
-    TaskType: ui_popup_interaction
-    Hint: 
-    ValueInt: 0
-    ValueStr: 
-    NextTaskTrigger: spaceKey
-    EndActions: (stop_sound, 3)
-  - ID: 12
+  - ID: 6
     Group: 200
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: S3_PhoneMix
+    SoundStop: S3_PhoneMix
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 13
+  - ID: 7
     Group: 200
     TaskType: ui_popup_interaction
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
+    NextTaskTrigger: spaceKey
+    EndActions: (stop_sound, 3)
+  - ID: 8
+    Group: 200
+    TaskType: ui_popup_interaction
+    Hint: 
+    ValueInt: 0
+    ValueStr: 
+    SoundStop: 
     NextTaskTrigger: spaceKey
     EndActions: 
-  - ID: 14
+  - ID: 9
     Group: 200
     TaskType: ui_keypad
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 15
+  - ID: 10
     Group: 200
     TaskType: door_open
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: (spawn, 300)
-  - ID: 16
+  - ID: 11
+    Group: 300
+    TaskType: display_title
+    Hint: 
+    ValueInt: 0
+    ValueStr: Day Room
+    SoundStop: 
+    NextTaskTrigger: 
+    EndActions: 
+  - ID: 12
     Group: 300
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: R3_DayroomAmb
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 17
+  - ID: 13
     Group: 300
     TaskType: silence
     Hint: 
     ValueInt: 2
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 18
+  - ID: 14
     Group: 300
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: R3_RadioMix
+    SoundStop: 
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 19
+  - ID: 15
     Group: 300
     TaskType: ui_password
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 20
+  - ID: 16
     Group: 300
     TaskType: door_open
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: (spawn, 400)
-  - ID: 21
+  - ID: 17
+    Group: 400
+    TaskType: display_title
+    Hint: 
+    ValueInt: 0
+    ValueStr: Examination Room
+    SoundStop: 
+    NextTaskTrigger: 
+    EndActions: 
+  - ID: 18
     Group: 400
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: S4_WaterDrops
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 22
+  - ID: 19
     Group: 400
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: S4_FemaleScream
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 23
+  - ID: 20
     Group: 400
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: S4_HospitalVentilator
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 24
+  - ID: 21
     Group: 400
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: S4_FakeDarkLaugh
+    SoundStop: 
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 25
+  - ID: 22
     Group: 400
     TaskType: ui_password
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 26
+  - ID: 23
     Group: 400
     TaskType: door_open
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: (spawn, 500)
-  - ID: 27
+  - ID: 24
+    Group: 500
+    TaskType: display_title
+    Hint: 
+    ValueInt: 0
+    ValueStr: Dining Room
+    SoundStop: 
+    NextTaskTrigger: 
+    EndActions: 
+  - ID: 25
     Group: 500
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: S5_Laugh
+    SoundStop: 
+    NextTaskTrigger: 
+    EndActions: 
+  - ID: 26
+    Group: 500
+    TaskType: play_sound_loop
+    Hint: 
+    ValueInt: 0
+    ValueStr: S5_Kettle
+    SoundStop: 
+    NextTaskTrigger: 
+    EndActions: 
+  - ID: 27
+    Group: 500
+    TaskType: play_sound_loop
+    Hint: 
+    ValueInt: 0
+    ValueStr: S5_IceCubes
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
   - ID: 28
@@ -234,7 +261,8 @@ MonoBehaviour:
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
-    ValueStr: S5_Kettle
+    ValueStr: S5_Lullaby
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
   - ID: 29
@@ -242,102 +270,106 @@ MonoBehaviour:
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
-    ValueStr: S5_IceCubes
-    NextTaskTrigger: 
-    EndActions: 
-  - ID: 30
-    Group: 500
-    TaskType: play_sound_loop
-    Hint: 
-    ValueInt: 0
-    ValueStr: S5_Lullaby
-    NextTaskTrigger: 
-    EndActions: 
-  - ID: 31
-    Group: 500
-    TaskType: play_sound_loop
-    Hint: 
-    ValueInt: 0
     ValueStr: S5_IWKY
+    SoundStop: 
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 32
+  - ID: 30
     Group: 500
     TaskType: ui_password
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 33
+  - ID: 31
     Group: 500
     TaskType: door_open
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: (spawn, 600)
-  - ID: 34
+  - ID: 32
+    Group: 600
+    TaskType: display_title
+    Hint: 
+    ValueInt: 0
+    ValueStr: Stock
+    SoundStop: 
+    NextTaskTrigger: 
+    EndActions: 
+  - ID: 33
     Group: 600
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: S6_RP
+    SoundStop: 
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 35
+  - ID: 34
     Group: 600
     TaskType: ui_password
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 36
+  - ID: 35
     Group: 600
     TaskType: door_open
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: TV Room
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: (spawn, 700)
-  - ID: 37
+  - ID: 36
     Group: 700
     TaskType: play_sound
     Hint: 
     ValueInt: 0
     ValueStr: S7_Alphabet
+    SoundStop: 
     NextTaskTrigger: sound_end
     EndActions: 
-  - ID: 38
+  - ID: 37
     Group: 700
     TaskType: play_sound
     Hint: 
     ValueInt: 0
     ValueStr: S7_Child
+    SoundStop: 
     NextTaskTrigger: sound_end
     EndActions: 
-  - ID: 39
+  - ID: 38
     Group: 700
     TaskType: ui_popup_interaction
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: spaceKey
     EndActions: 
-  - ID: 40
+  - ID: 39
     Group: 700
     TaskType: ui_password
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 41
+  - ID: 40
     Group: 700
     TaskType: door_open
     Hint: 
     ValueInt: 0
     ValueStr: 
+    SoundStop: 
     NextTaskTrigger: 
     EndActions: (end_game)

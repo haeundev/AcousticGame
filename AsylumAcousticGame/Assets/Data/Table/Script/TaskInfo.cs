@@ -16,6 +16,7 @@ namespace Proto.Data
         public string Hint;
         public int ValueInt;
         public string ValueStr;
+        public string SoundStop;
         public string NextTaskTrigger;
         public string EndActions;
     }
