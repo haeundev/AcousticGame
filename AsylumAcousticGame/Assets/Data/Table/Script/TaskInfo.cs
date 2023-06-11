@@ -11,6 +11,7 @@ namespace Proto.Data
     public class TaskInfo
     {
         public int ID;
+        public int Group;
         public string TaskType;
         public string Hint;
         public int ValueInt;
