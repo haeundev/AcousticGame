@@ -51,6 +51,15 @@ MonoBehaviour:
     EndActions: (spawn, 200)
   - ID: 5
     Group: 200
+    TaskType: play_sound
+    Hint: 
+    ValueInt: 0
+    ValueStr: door_close
+    SoundStop: 
+    NextTaskTrigger: 
+    EndActions: 
+  - ID: 6
+    Group: 200
     TaskType: display_title
     Hint: 
     ValueInt: 0
@@ -58,7 +67,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 6
+  - ID: 7
     Group: 200
     TaskType: play_sound_loop
     Hint: 
@@ -67,43 +76,25 @@ MonoBehaviour:
     SoundStop: S3_PhoneMix
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 7
-    Group: 200
-    TaskType: ui_popup_interaction
-    Hint: 
-    ValueInt: 0
-    ValueStr: 
-    SoundStop: 
-    NextTaskTrigger: spaceKey
-    EndActions: (stop_sound, 3)
   - ID: 8
     Group: 200
-    TaskType: ui_popup_interaction
+    TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: door_open
     SoundStop: 
-    NextTaskTrigger: spaceKey
+    NextTaskTrigger: sound_end
     EndActions: 
   - ID: 9
     Group: 200
-    TaskType: ui_keypad
+    TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: door_close
     SoundStop: 
-    NextTaskTrigger: 
-    EndActions: 
+    NextTaskTrigger: sound_end
+    EndActions: (spawn, 300)(stop_sound, 7)
   - ID: 10
-    Group: 200
-    TaskType: door_open
-    Hint: 
-    ValueInt: 0
-    ValueStr: 
-    SoundStop: 
-    NextTaskTrigger: 
-    EndActions: (spawn, 300)
-  - ID: 11
     Group: 300
     TaskType: display_title
     Hint: 
@@ -111,26 +102,17 @@ MonoBehaviour:
     ValueStr: Day Room
     SoundStop: 
     NextTaskTrigger: 
-    EndActions: 
-  - ID: 12
+    EndActions: (stop_sound, 8)(stop_sound, 9)
+  - ID: 11
     Group: 300
     TaskType: play_sound_loop
     Hint: 
     ValueInt: 0
     ValueStr: R3_DayroomAmb
     SoundStop: 
-    NextTaskTrigger: 
+    NextTaskTrigger: trigger_instant
     EndActions: 
-  - ID: 13
-    Group: 300
-    TaskType: silence
-    Hint: 
-    ValueInt: 2
-    ValueStr: 
-    SoundStop: 
-    NextTaskTrigger: 
-    EndActions: 
-  - ID: 14
+  - ID: 12
     Group: 300
     TaskType: play_sound_loop
     Hint: 
@@ -139,7 +121,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 15
+  - ID: 13
     Group: 300
     TaskType: ui_password
     Hint: 
@@ -148,7 +130,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 16
+  - ID: 14
     Group: 300
     TaskType: door_open
     Hint: 
@@ -157,7 +139,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: (spawn, 400)
-  - ID: 17
+  - ID: 15
     Group: 400
     TaskType: display_title
     Hint: 
@@ -166,7 +148,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 18
+  - ID: 16
     Group: 400
     TaskType: play_sound_loop
     Hint: 
@@ -175,7 +157,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 19
+  - ID: 17
     Group: 400
     TaskType: play_sound_loop
     Hint: 
@@ -184,7 +166,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 20
+  - ID: 18
     Group: 400
     TaskType: play_sound_loop
     Hint: 
@@ -193,7 +175,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 21
+  - ID: 19
     Group: 400
     TaskType: play_sound_loop
     Hint: 
@@ -202,7 +184,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 22
+  - ID: 20
     Group: 400
     TaskType: ui_password
     Hint: 
@@ -211,7 +193,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 23
+  - ID: 21
     Group: 400
     TaskType: door_open
     Hint: 
@@ -220,7 +202,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: (spawn, 500)
-  - ID: 24
+  - ID: 22
     Group: 500
     TaskType: display_title
     Hint: 
@@ -229,7 +211,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 25
+  - ID: 23
     Group: 500
     TaskType: play_sound_loop
     Hint: 
@@ -238,7 +220,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 26
+  - ID: 24
     Group: 500
     TaskType: play_sound_loop
     Hint: 
@@ -247,7 +229,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 27
+  - ID: 25
     Group: 500
     TaskType: play_sound_loop
     Hint: 
@@ -256,7 +238,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 28
+  - ID: 26
     Group: 500
     TaskType: play_sound_loop
     Hint: 
@@ -265,7 +247,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 29
+  - ID: 27
     Group: 500
     TaskType: play_sound_loop
     Hint: 
@@ -274,7 +256,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 30
+  - ID: 28
     Group: 500
     TaskType: ui_password
     Hint: 
@@ -283,7 +265,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 31
+  - ID: 29
     Group: 500
     TaskType: door_open
     Hint: 
@@ -292,7 +274,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: (spawn, 600)
-  - ID: 32
+  - ID: 30
     Group: 600
     TaskType: display_title
     Hint: 
@@ -301,7 +283,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 33
+  - ID: 31
     Group: 600
     TaskType: play_sound_loop
     Hint: 
@@ -310,7 +292,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: collision
     EndActions: 
-  - ID: 34
+  - ID: 32
     Group: 600
     TaskType: ui_password
     Hint: 
@@ -319,7 +301,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 35
+  - ID: 33
     Group: 600
     TaskType: door_open
     Hint: 
@@ -328,7 +310,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: (spawn, 700)
-  - ID: 36
+  - ID: 34
     Group: 700
     TaskType: play_sound
     Hint: 
@@ -337,7 +319,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: sound_end
     EndActions: 
-  - ID: 37
+  - ID: 35
     Group: 700
     TaskType: play_sound
     Hint: 
@@ -346,7 +328,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: sound_end
     EndActions: 
-  - ID: 38
+  - ID: 36
     Group: 700
     TaskType: ui_popup_interaction
     Hint: 
@@ -355,7 +337,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: spaceKey
     EndActions: 
-  - ID: 39
+  - ID: 37
     Group: 700
     TaskType: ui_password
     Hint: 
@@ -364,7 +346,7 @@ MonoBehaviour:
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
-  - ID: 40
+  - ID: 38
     Group: 700
     TaskType: door_open
     Hint: 

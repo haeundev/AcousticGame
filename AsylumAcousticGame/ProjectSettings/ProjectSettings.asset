@@ -752,7 +752,7 @@ PlayerSettings:
   metroSplashScreenUseBackgroundColor: 0
   platformCapabilities:
     WindowsStoreApps:
-      EnterpriseAuthentication: False
+      CodeGeneration: False
       OfflineMapsManagement: False
       HumanInterfaceDevice: False
       Location: False
@@ -787,8 +787,8 @@ PlayerSettings:
       Contacts: False
       Proximity: False
       InternetClient: False
-      CodeGeneration: False
       BackgroundMediaPlayback: False
+      EnterpriseAuthentication: False
   metroTargetDeviceFamilies: {}
   metroFTAName: 
   metroFTAFileTypes: []

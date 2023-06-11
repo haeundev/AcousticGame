@@ -31,6 +31,7 @@ public class TaskDirector : MonoBehaviour
 
     private void InitTask(TaskInfo taskInfo)
     {
+
         // var prevGroup = currentGroup;
         // if (prevGroup != currentGroup)
         // {
@@ -66,6 +67,8 @@ public class TaskDirector : MonoBehaviour
             
             case "play_sound_loop":
                 SoundSources.PlayLoop(taskInfo.ValueStr);
+                if (taskInfo.NextTaskTrigger == "trigger_instant")
+                    CompleteCurrentTask();
                 break;
             
             // case "ui_keypad":
@@ -175,7 +178,7 @@ public class TaskDirector : MonoBehaviour
         var player = GameObject.FindWithTag("Player");
         player.transform.position = pos;
         player.transform.rotation = posObj.transform.rotation;
-        
+        Camera.main.gameObject.AddComponent<ColorScreenFadeInCamera>();
         yield break;
     }
 

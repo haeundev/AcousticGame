@@ -11,6 +11,7 @@ public class UI_Toast_Title : UI_Window
     {
         base.Open();
         
+        gameObject.SetActive(false);
         gameObject.SetActive(true);
     }
     
