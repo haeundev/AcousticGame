@@ -20,6 +20,13 @@ public class UIWindows : MonoBehaviour
 
     public static UI_Window GetWindow(int id)
     {
-        return _windows.FirstOrDefault(windowComp => windowComp.ID == id);
+        var found = _windows.First(windowComp => windowComp.ID == id);
+        if (found == default)
+        {
+            Debug.LogError($"Can't find window of ID: {id}");
+            Application.Quit();
+            return default;
+        }
+        return found;
     }
 }

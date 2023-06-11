@@ -15,7 +15,7 @@ public class TaskDirector : MonoBehaviour
     public TaskInfo CurrentTask { get; private set; }
     private event Action<TaskInfo> OnTaskAcquired;
 
-    private void Awake()
+    private void Start()
     {
         Instance = this;
         _tasks = taskInfos.Values;
@@ -35,12 +35,20 @@ public class TaskDirector : MonoBehaviour
             case "display_title":
                 win = UIWindows.GetWindow(1) as UI_Toast_Title;
                 ((UI_Toast_Title)win).SetTitle(taskInfo.ValueStr);
-                win.Open();
-                StartCoroutine(WaitForSec(3.5f, CompleteCurrentTask));
+                ((UI_Toast_Title)win).Open();
+                StartCoroutine(WaitForSec(3.5f, () =>
+                {
+                    Debug.Log($"Title display done.");
+                    CompleteCurrentTask();
+                }));
                 break;
             
             case "silence":
-                StartCoroutine(WaitForSec(2, CompleteCurrentTask));
+                StartCoroutine(WaitForSec(2, () =>
+                {
+                    Debug.Log($"Silence done.");
+                    CompleteCurrentTask();
+                }));
                 break;
             
             case "play_sound":

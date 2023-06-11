@@ -13,6 +13,10 @@ public class SoundSources : MonoBehaviour
     {
         Instance = this;
         _sources = GetComponentsInChildren<AudioSource>().ToList();
+        foreach (var source in _sources)
+        {
+            source.gameObject.SetActive(false);
+        }
     }
 
     public static void Play(string name, Action onEnd)
@@ -23,12 +27,9 @@ public class SoundSources : MonoBehaviour
             Debug.LogError($"Cannot Play {name}. No object found.");
             return;
         }
-        else
-        {
-            sound.spatialize = true;
-            sound.Play();
-            Instance.StartCoroutine(WaitForSoundEnd(sound, onEnd));
-        }
+        sound.gameObject.SetActive(true);
+        Debug.Log($"Play {name}.");
+        Instance.StartCoroutine(WaitForSoundEnd(sound, onEnd));
     }
 
     private static IEnumerator WaitForSoundEnd(AudioSource sound, Action onEnd)
@@ -45,9 +46,9 @@ public class SoundSources : MonoBehaviour
             Debug.LogError($"Cannot Play {name}. No object found.");
             return;
         }
-        sound.loop = true;
-        sound.spatialize = true;
+        sound.gameObject.SetActive(true);
         sound.Play();
+        Debug.Log($"Play loop {name}.");
     }
 
     public static void Stop(string name)

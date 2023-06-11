@@ -8,7 +8,9 @@ public class UI_Popup_Interaction : UI_Window
     {
         base.Open();
         
-        
+        gameObject.SetActive(true);
     }
+    
+    
 
 }
