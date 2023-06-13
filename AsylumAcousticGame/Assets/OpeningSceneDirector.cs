@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,8 +21,19 @@ public class OpeningSceneDirector : MonoBehaviour
             if (_isLoading)
                 return;
             _isLoading = true;   
-            SceneManager.LoadScene("InGame");
             subtitle.text = "Loading...";
+            StartLoading();
         }
+    }
+
+    private void StartLoading()
+    {
+        StartCoroutine(Loading());
+    }
+
+    private IEnumerator Loading()
+    {
+        yield return new WaitForEndOfFrame();
+        SceneManager.LoadScene("InGame");
     }
 }
