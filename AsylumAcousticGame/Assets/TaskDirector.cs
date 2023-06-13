@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class TaskDirector : MonoBehaviour
 {
     [SerializeField] private int initialTaskID = 1;
+    [SerializeField] private GameObject endScreen;
     public static TaskDirector Instance;
     public TaskInfos taskInfos;
     private List<TaskInfo> _tasks;
@@ -104,20 +105,23 @@ public class TaskDirector : MonoBehaviour
 
         StartCoroutine(SpawnPlayer(first.Group.ToString()));
     }
-    
+
     private void Update()
     {
         var keyboardInput = UIWindows.GetWindow(6);
         if (keyboardInput.gameObject.activeSelf)
             return;
-        
-        if (Input.GetKeyDown(KeyCode.R))
+
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            ResetToFirstTaskOfGroup();
-        }
-        else if (Input.GetKeyDown(KeyCode.H))
-        {
-            ShowHint();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                ResetToFirstTaskOfGroup();
+            }
+            else if (Input.GetKeyDown(KeyCode.H))
+            {
+                ShowHint();
+            }
         }
     }
 
@@ -187,11 +191,14 @@ public class TaskDirector : MonoBehaviour
         Camera.main.gameObject.AddComponent<ColorScreenFadeInCamera>();
         Debug.Log($"Spawn player to {value}");
         cc.enabled = true;
-        yield break;
     }
 
     private void EndGame()
     {
+        var player = GameObject.Find("--- Player");
+        var cc = player.GetComponentInChildren<CharacterController>();
+        cc.enabled = false;
+        endScreen.gameObject.SetActive(true);
         SceneManager.LoadSceneAsync("EndingScene");
     }
 }
