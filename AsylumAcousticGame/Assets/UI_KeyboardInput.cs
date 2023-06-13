@@ -31,7 +31,17 @@ public class UI_KeyboardInput : UI_Window
             gameObject.SetActive(false);
             OnComplete?.Invoke();
             inputField.text = "";
-            CloseScreen.Show();
+            if (TaskDirector.Instance.CurrentTask.Group != 700)
+                CloseScreen.Show();
+            else
+            {
+                // end game
+                EndScreen.Show();
+                var player = GameObject.Find("--- Player");
+                var cc = player.GetComponentInChildren<CharacterController>();
+                cc.enabled = false;
+                TaskDirector.Instance.StopAllCoroutines();
+            }
         }
     }
     

@@ -36,7 +36,9 @@ public class UI_Keypad : UI_Window
             OnComplete?.Invoke();
             gameObject.SetActive(false);
             TaskDirector.Instance.CompleteCurrentTask();
-            CloseScreen.Show();
+            
+            if (TaskDirector.Instance.CurrentTask.Group != 700)
+                CloseScreen.Show();
         }
     }
 

@@ -13,7 +13,7 @@ public class CloseScreen : MonoBehaviour
         GetComponentInChildren<CameraFadeEffect>().onComplete += () =>
         {
             IsClosing = false;
-            Observable.Timer(TimeSpan.FromSeconds(0.3f)).Subscribe(_ =>
+            Observable.Timer(TimeSpan.FromSeconds(2.5f)).Subscribe(_ =>
             {
                 gameObject.SetActive(false);
             });

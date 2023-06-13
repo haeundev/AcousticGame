@@ -5,7 +5,6 @@ using System.Linq;
 using Apin.DialogueSystem;
 using Proto.Data;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TaskDirector : MonoBehaviour
 {
@@ -30,6 +29,8 @@ public class TaskDirector : MonoBehaviour
 
     private void InitTask(TaskInfo taskInfo)
     {
+        if (taskInfo == default)
+            return;
         switch (taskInfo.TaskType)
         {
             case "display_title":
@@ -118,10 +119,7 @@ public class TaskDirector : MonoBehaviour
             if (_tasks == default)
                 return;
             if (CurrentTask == default)
-            {
-                EndGame();
                 return;
-            }
             CurrentTask = _tasks.FirstOrDefault(p => p.ID == CurrentTask.ID + 1);
             OnTaskAcquired?.Invoke(CurrentTask);
         }));
@@ -155,13 +153,7 @@ public class TaskDirector : MonoBehaviour
                 UIWindows.GetWindow(1).enabled = false;
                 yield return SpawnPlayer(values[1]);
                 break;
-
-            case "end_game":
-                EndGame();
-                break;
         }
-
-        yield break;
     }
 
     private IEnumerator SpawnPlayer(string value)
@@ -181,13 +173,5 @@ public class TaskDirector : MonoBehaviour
         Camera.main.gameObject.AddComponent<ColorScreenFadeInCamera>();
         Debug.Log($"Spawn player to {value}");
         cc.enabled = true;
-    }
-
-    private void EndGame()
-    {
-        var player = GameObject.Find("--- Player");
-        var cc = player.GetComponentInChildren<CharacterController>();
-        cc.enabled = false;
-        EndScreen.Show();
     }
 }

@@ -2,18 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Proto.Util;
 using UnityEngine;
 
 public class SoundSources : MonoBehaviour
 {
     public static SoundSources Instance;
-    private static List<AudioSource> _sources;
+    [SerializeField] private  List<AudioSource> audioSources;
     
     private void Awake()
     {
         Instance = this;
-        _sources = GetComponentsInChildren<AudioSource>().ToList();
-        foreach (var source in _sources)
+        foreach (var source in audioSources)
         {
             source.gameObject.SetActive(false);
         }
@@ -21,12 +21,13 @@ public class SoundSources : MonoBehaviour
 
     public static void Play(string name, Action onEnd)
     {
-        var sound = _sources.FirstOrDefault(p => p.gameObject.name == name);
+        var sound = Instance.audioSources.FirstOrDefault(p => p.gameObject.name == name);
         if (sound == default)
         {
             Debug.LogError($"Cannot Play {name}. No object found.");
             return;
         }
+        sound.gameObject.SetActive(false);
         sound.gameObject.SetActive(true);
         sound.loop = false;
         Debug.Log($"Play sound: {name}");
@@ -42,7 +43,7 @@ public class SoundSources : MonoBehaviour
 
     public static void PlayLoop(string name)
     {
-        var sound = _sources.FirstOrDefault(p => p.gameObject.name == name);
+        var sound = Instance.audioSources.FirstOrDefault(p => p.gameObject.name == name);
         if (sound == default)
         {
             Debug.LogError($"Cannot Play {name}. No object found.");
@@ -58,7 +59,7 @@ public class SoundSources : MonoBehaviour
     {
         if (name == default || name == string.Empty)
             return;
-        var sound = _sources.FirstOrDefault(p => p.gameObject.name == name);
+        var sound = Instance.audioSources.FirstOrDefault(p => p.gameObject.name == name);
         if (sound == default)
         {
             Debug.LogError($"Cannot Stop {name}. No object found.");
@@ -70,9 +71,9 @@ public class SoundSources : MonoBehaviour
     
     public static void StopAll()
     {
-        foreach (var sound in _sources)
+        foreach (var audioSource in Instance.audioSources)
         {
-            sound.Stop();
+            audioSource.Stop();
         }
     }
 }

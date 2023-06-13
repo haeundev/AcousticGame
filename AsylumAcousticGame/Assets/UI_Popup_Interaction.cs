@@ -23,6 +23,7 @@ public class UI_Popup_Interaction : UI_Window
                     TaskDirector.Instance.CompleteCurrentTask();
                     Destroy(_source);
                     gameObject.SetActive(false);
+                    CloseScreen.Show();
                     break;
                 case 200:
                 case 300:

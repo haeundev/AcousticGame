@@ -75,7 +75,7 @@ MonoBehaviour:
     ValueStr: Office
     SoundStop: 
     IsInstant: 0
-    EndActions: (stop_sound, 5)(stop_sound, 6)
+    EndActions: 
   - ID: 8
     Group: 200
     TaskType: play_sound_loop
@@ -93,7 +93,7 @@ MonoBehaviour:
     ValueStr: S3_PhoneMix
     SoundStop: S3_PhoneMix
     IsInstant: 0
-    EndActions: 
+    EndActions: (stop_sound, 5)(stop_sound, 6)
   - ID: 10
     Group: 200
     TaskType: play_sound
@@ -120,7 +120,7 @@ MonoBehaviour:
     ValueStr: Day Room
     SoundStop: 
     IsInstant: 0
-    EndActions: (stop_sound, 10)(stop_sound, 11)
+    EndActions: 
   - ID: 13
     Group: 300
     TaskType: play_sound_loop
@@ -138,7 +138,7 @@ MonoBehaviour:
     ValueStr: R3_RadioMix
     SoundStop: 
     IsInstant: 0
-    EndActions: 
+    EndActions: (stop_sound, 10)(stop_sound, 11)
   - ID: 15
     Group: 300
     TaskType: play_sound
@@ -160,12 +160,12 @@ MonoBehaviour:
   - ID: 17
     Group: 400
     TaskType: display_title
-    Hint: Listen carefully and count the numbers. Combine in a counterclockwise direction.
+    Hint: Listen carefully and count the numbers. Combine in clockwise direction.
     ValueInt: 0
     ValueStr: Examination Room
     SoundStop: 
     IsInstant: 0
-    EndActions: (stop_sound, 15)(stop_sound, 16)
+    EndActions: 
   - ID: 18
     Group: 400
     TaskType: play_sound_loop
@@ -201,7 +201,7 @@ MonoBehaviour:
     ValueStr: S4_FakeDarkLaugh
     SoundStop: 
     IsInstant: 0
-    EndActions: 
+    EndActions: (stop_sound, 15)(stop_sound, 16)
   - ID: 22
     Group: 400
     TaskType: play_sound
@@ -230,7 +230,7 @@ MonoBehaviour:
     ValueStr: Dining Room
     SoundStop: 
     IsInstant: 0
-    EndActions: (stop_sound, 22)(stop_sound, 23)
+    EndActions: 
   - ID: 25
     Group: 500
     TaskType: play_sound_loop
@@ -275,7 +275,7 @@ MonoBehaviour:
     ValueStr: S5_IWKY
     SoundStop: 
     IsInstant: 0
-    EndActions: 
+    EndActions: (stop_sound, 22)(stop_sound, 23)
   - ID: 30
     Group: 500
     TaskType: play_sound
@@ -303,7 +303,7 @@ MonoBehaviour:
     ValueStr: Stock
     SoundStop: 
     IsInstant: 0
-    EndActions: (stop_sound, 30)(stop_sound, 31)
+    EndActions: 
   - ID: 33
     Group: 600
     TaskType: play_sound_loop
@@ -312,7 +312,7 @@ MonoBehaviour:
     ValueStr: S6_RP
     SoundStop: 
     IsInstant: 0
-    EndActions: 
+    EndActions: (stop_sound, 30)(stop_sound, 31)
   - ID: 34
     Group: 600
     TaskType: play_sound
@@ -358,12 +358,3 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 39
-    Group: 700
-    TaskType: door_open
-    Hint: 
-    ValueInt: 0
-    ValueStr: 
-    SoundStop: 
-    IsInstant: 0
-    EndActions: (end_game)
