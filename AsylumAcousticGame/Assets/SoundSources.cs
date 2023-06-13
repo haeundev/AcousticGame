@@ -8,7 +8,7 @@ using UnityEngine;
 public class SoundSources : MonoBehaviour
 {
     public static SoundSources Instance;
-    [SerializeField] private  List<AudioSource> audioSources;
+    [SerializeField] private  List<GameObject> audioSources;
     
     private void Awake()
     {
@@ -27,12 +27,12 @@ public class SoundSources : MonoBehaviour
             Debug.LogError($"Cannot Play {name}. No object found.");
             return;
         }
+        sound.GetComponentInChildren<AudioSource>().loop = false;
         sound.gameObject.SetActive(false);
         sound.gameObject.SetActive(true);
-        sound.loop = false;
         Debug.Log($"Play sound: {name}");
 
-        Instance.StartCoroutine(WaitForSoundEnd(sound, onEnd));
+        Instance.StartCoroutine(WaitForSoundEnd(sound.GetComponentInChildren<AudioSource>(), onEnd));
     }
 
     private static IEnumerator WaitForSoundEnd(AudioSource sound, Action onEnd)
@@ -50,8 +50,8 @@ public class SoundSources : MonoBehaviour
             return;
         }
         sound.gameObject.SetActive(true);
-        sound.loop = true;
-        sound.Play();
+        sound.GetComponentInChildren<AudioSource>().loop = true;
+        sound.GetComponentInChildren<AudioSource>().Play();
         Debug.Log($"Play sound loop: {name}.");
     }
 
@@ -66,14 +66,19 @@ public class SoundSources : MonoBehaviour
             return;
         }
         Debug.Log($"Stop sound: {name}.");
-        sound.Stop();
+        sound.SetActive(false);
     }
     
-    public static void StopAll()
+    public static void StopAll(bool includeDoor)
     {
         foreach (var audioSource in Instance.audioSources)
         {
-            audioSource.Stop();
+            if (includeDoor == false)
+            {
+                if (audioSource.name.Contains("door_"))
+                    continue;
+            }
+            audioSource.SetActive(false);
         }
     }
 }

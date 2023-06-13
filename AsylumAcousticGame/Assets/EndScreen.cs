@@ -13,7 +13,7 @@ public class EndScreen : MonoBehaviour
     public static void Show()
     {
         Instance.gameObject.SetActive(true);
-        SoundSources.StopAll();
+        SoundSources.StopAll(true);
     }
 
     public void Close()

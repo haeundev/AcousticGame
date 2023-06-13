@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class OpeningSceneDirector : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI title;
     [SerializeField] private TextMeshProUGUI subtitle;
     [SerializeField] private GameObject globalSoundPlayer;
     private bool _isLoading;
@@ -21,6 +22,7 @@ public class OpeningSceneDirector : MonoBehaviour
             if (_isLoading)
                 return;
             _isLoading = true;   
+            title.text = "Get Out";
             subtitle.text = "Loading...";
             StartLoading();
         }

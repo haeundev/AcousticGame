@@ -55,7 +55,7 @@ public class TaskDirector : MonoBehaviour
 
     private void DisplayTitle(TaskInfo taskInfo)
     {
-        SoundSources.StopAll();
+        SoundSources.StopAll(false);
         StartCoroutine(coDisplayTitle(taskInfo));
     }
 
@@ -79,7 +79,7 @@ public class TaskDirector : MonoBehaviour
     public void ResetToFirstTaskOfGroup()
     {
         UIWindows.CloseAll();
-        SoundSources.StopAll();
+        SoundSources.StopAll(true);
         
         var first = _tasks.FirstOrDefault(p => p.Group == CurrentTask.Group);
         CurrentTask = first;
@@ -146,7 +146,7 @@ public class TaskDirector : MonoBehaviour
         {
             case "stop_sound":
                 var taskToStopAudio = _tasks.Find(p => p.ID == int.Parse(values[1]));
-                GameObject.Find($"{taskToStopAudio.ValueStr}")?.GetComponentInChildren<AudioSource>()?.Stop();
+                SoundSources.Stop(taskToStopAudio.ValueStr);
                 break;
 
             case "spawn":
