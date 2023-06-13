@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class UI_Keypad : UI_Window
 {
+    private CharacterController _cc;
     private string _accumulatedNumbers;
     public Action OnComplete;
 
     private void Awake()
     {
+        _cc = GameObject.Find("--- Player").GetComponentInChildren<CharacterController>();
         var buttons = GetComponentsInChildren<KeypadSoundPlayer>().ToList();
         foreach (var button in buttons)
             button.OnPressed += OnButtonPressed;
@@ -40,12 +42,14 @@ public class UI_Keypad : UI_Window
     public override void Open()
     {
         base.Open();
+        _cc.enabled = false;
         gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnEnable()
     {
+        _cc.enabled = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         
@@ -59,6 +63,7 @@ public class UI_Keypad : UI_Window
 
     private void OnDisable()
     {
+        _cc.enabled = true;
         Cursor.lockState = CursorLockMode.None;
         
         if (CameraController.Instance != default)
