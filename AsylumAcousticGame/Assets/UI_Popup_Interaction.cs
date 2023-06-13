@@ -27,6 +27,7 @@ public class UI_Popup_Interaction : UI_Window
                 case 200:
                 case 300:
                 case 400:
+                    SoundSources.Stop(TaskDirector.Instance.CurrentTask.SoundStop);
                     var keypad = UIWindows.GetWindow(2) as UI_Keypad;
                     keypad.Open();
                     gameObject.SetActive(false);
@@ -44,6 +45,11 @@ public class UI_Popup_Interaction : UI_Window
                     };
                     gameObject.SetActive(false);
                     break;
+            }
+            
+            if (TaskDirector.Instance.CurrentTask.Group == 200)
+            {
+                SoundSources.Stop("S3_PhoneRinging");
             }
         }
     }

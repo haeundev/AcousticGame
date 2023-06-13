@@ -48,8 +48,17 @@ MonoBehaviour:
     ValueStr: S2_PlayerSaying
     SoundStop: 
     IsInstant: 0
-    EndActions: (spawn, 200)
+    EndActions: 
   - ID: 5
+    Group: 100
+    TaskType: play_sound
+    Hint: 
+    ValueInt: 0
+    ValueStr: door_open
+    SoundStop: 
+    IsInstant: 0
+    EndActions: 
+  - ID: 6
     Group: 200
     TaskType: play_sound
     Hint: 
@@ -57,8 +66,8 @@ MonoBehaviour:
     ValueStr: door_close
     SoundStop: 
     IsInstant: 0
-    EndActions: 
-  - ID: 6
+    EndActions: (spawn, 200)(stop_sound, 2)(stop_sound, 3)(stop_sound, 4)
+  - ID: 7
     Group: 200
     TaskType: display_title
     Hint: 
@@ -67,7 +76,16 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 7
+  - ID: 8
+    Group: 200
+    TaskType: play_sound_loop
+    Hint: 
+    ValueInt: 0
+    ValueStr: S3_PhoneRinging
+    SoundStop: S3_PhoneRinging
+    IsInstant: 1
+    EndActions: 
+  - ID: 9
     Group: 200
     TaskType: play_sound_loop
     Hint: 
@@ -76,7 +94,7 @@ MonoBehaviour:
     SoundStop: S3_PhoneMix
     IsInstant: 0
     EndActions: 
-  - ID: 8
+  - ID: 10
     Group: 200
     TaskType: play_sound
     Hint: 
@@ -85,7 +103,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 9
+  - ID: 11
     Group: 200
     TaskType: play_sound
     Hint: 
@@ -93,8 +111,8 @@ MonoBehaviour:
     ValueStr: door_close
     SoundStop: 
     IsInstant: 0
-    EndActions: (spawn, 300)(stop_sound, 7)
-  - ID: 10
+    EndActions: (spawn, 300)(stop_sound, 8)(stop_sound, 9)
+  - ID: 12
     Group: 300
     TaskType: display_title
     Hint: 
@@ -102,8 +120,8 @@ MonoBehaviour:
     ValueStr: Day Room
     SoundStop: 
     IsInstant: 0
-    EndActions: (stop_sound, 7)
-  - ID: 11
+    EndActions: 
+  - ID: 13
     Group: 300
     TaskType: play_sound_loop
     Hint: 
@@ -112,7 +130,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 1
     EndActions: 
-  - ID: 12
+  - ID: 14
     Group: 300
     TaskType: play_sound_loop
     Hint: 
@@ -121,7 +139,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 13
+  - ID: 15
     Group: 300
     TaskType: play_sound
     Hint: 
@@ -130,7 +148,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 14
+  - ID: 16
     Group: 300
     TaskType: play_sound
     Hint: 
@@ -139,7 +157,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: (spawn, 400)
-  - ID: 15
+  - ID: 17
     Group: 400
     TaskType: display_title
     Hint: 
@@ -148,7 +166,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 16
+  - ID: 18
     Group: 400
     TaskType: play_sound_loop
     Hint: 
@@ -157,7 +175,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 1
     EndActions: 
-  - ID: 17
+  - ID: 19
     Group: 400
     TaskType: play_sound_loop
     Hint: 
@@ -166,7 +184,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 1
     EndActions: 
-  - ID: 18
+  - ID: 20
     Group: 400
     TaskType: play_sound_loop
     Hint: 
@@ -175,7 +193,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 1
     EndActions: 
-  - ID: 19
+  - ID: 21
     Group: 400
     TaskType: play_sound_loop
     Hint: 
@@ -184,7 +202,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 20
+  - ID: 22
     Group: 400
     TaskType: play_sound
     Hint: 
@@ -193,7 +211,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 21
+  - ID: 23
     Group: 400
     TaskType: play_sound
     Hint: 
@@ -201,9 +219,9 @@ MonoBehaviour:
     ValueStr: door_close
     SoundStop: 
     IsInstant: 0
-    EndActions: (spawn, 500)(stop_sound, 16)(stop_sound, 17)(stop_sound, 18)(stop_sound,
-      19)
-  - ID: 22
+    EndActions: (spawn, 500)(stop_sound, 18)(stop_sound, 19)(stop_sound, 20)(stop_sound,
+      21)
+  - ID: 24
     Group: 500
     TaskType: display_title
     Hint: 
@@ -212,7 +230,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 23
+  - ID: 25
     Group: 500
     TaskType: play_sound_loop
     Hint: 
@@ -221,7 +239,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 1
     EndActions: 
-  - ID: 24
+  - ID: 26
     Group: 500
     TaskType: play_sound_loop
     Hint: 
@@ -230,7 +248,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 1
     EndActions: 
-  - ID: 25
+  - ID: 27
     Group: 500
     TaskType: play_sound_loop
     Hint: 
@@ -239,7 +257,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 1
     EndActions: 
-  - ID: 26
+  - ID: 28
     Group: 500
     TaskType: play_sound_loop
     Hint: 
@@ -248,7 +266,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 1
     EndActions: 
-  - ID: 27
+  - ID: 29
     Group: 500
     TaskType: play_sound_loop
     Hint: 
@@ -257,7 +275,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 28
+  - ID: 30
     Group: 500
     TaskType: play_sound
     Hint: 
@@ -266,7 +284,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 29
+  - ID: 31
     Group: 500
     TaskType: play_sound
     Hint: 
@@ -274,9 +292,9 @@ MonoBehaviour:
     ValueStr: door_close
     SoundStop: 
     IsInstant: 0
-    EndActions: (spawn, 600)(stop_sound, 23)(stop_sound, 24)(stop_sound, 25)(stop_sound,
-      26)(stop_sound, 27)
-  - ID: 30
+    EndActions: (spawn, 600)(stop_sound, 25)(stop_sound, 26)(stop_sound, 27)(stop_sound,
+      28)(stop_sound, 29)
+  - ID: 32
     Group: 600
     TaskType: display_title
     Hint: 
@@ -285,7 +303,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 31
+  - ID: 33
     Group: 600
     TaskType: play_sound_loop
     Hint: 
@@ -294,7 +312,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 32
+  - ID: 34
     Group: 600
     TaskType: play_sound
     Hint: 
@@ -303,7 +321,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 33
+  - ID: 35
     Group: 600
     TaskType: play_sound
     Hint: 
@@ -311,8 +329,8 @@ MonoBehaviour:
     ValueStr: door_close
     SoundStop: 
     IsInstant: 0
-    EndActions: (spawn, 700)(stop_sound, 31)
-  - ID: 34
+    EndActions: (spawn, 700)(stop_sound, 33)
+  - ID: 36
     Group: 700
     TaskType: display_title
     Hint: 
@@ -321,7 +339,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 35
+  - ID: 37
     Group: 700
     TaskType: play_sound
     Hint: 
@@ -330,7 +348,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 36
+  - ID: 38
     Group: 700
     TaskType: play_sound
     Hint: 
@@ -339,7 +357,7 @@ MonoBehaviour:
     SoundStop: 
     IsInstant: 0
     EndActions: 
-  - ID: 37
+  - ID: 39
     Group: 700
     TaskType: door_open
     Hint: 

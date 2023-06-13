@@ -13,11 +13,6 @@ public class OpenInteractionPopupOnCollision : MonoBehaviour
         var win = UIWindows.GetWindow(4) as UI_Popup_Interaction;
         win.SetSource(gameObject);
         win.Open();
-            
-        if (CurrentTask.ID == 7)
-        {
-            SoundSources.Stop(CurrentTask.SoundStop);
-        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -28,7 +23,7 @@ public class OpenInteractionPopupOnCollision : MonoBehaviour
         var win = UIWindows.GetWindow(4) as UI_Popup_Interaction;
         win.gameObject.SetActive(false);
 
-        if (CurrentTask.ID == 7)
+        if (CurrentTask.ID == 9) // S3_PhoneMix
         {
             SoundSources.PlayLoop(CurrentTask.SoundStop);
         }

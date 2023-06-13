@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -5,7 +6,8 @@ using UnityEngine;
 public class UI_Keypad : UI_Window
 {
     private string _accumulatedNumbers;
-    
+    public Action OnComplete;
+
     private void Awake()
     {
         var buttons = GetComponentsInChildren<KeypadSoundPlayer>().ToList();
@@ -29,6 +31,7 @@ public class UI_Keypad : UI_Window
     {
         if (_accumulatedNumbers.Contains(_passwordCorrectNums[TaskDirector.Instance.CurrentTask.Group]))
         {
+            OnComplete?.Invoke();
             gameObject.SetActive(false);
             TaskDirector.Instance.CompleteCurrentTask();
         }

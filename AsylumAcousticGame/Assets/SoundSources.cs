@@ -28,6 +28,7 @@ public class SoundSources : MonoBehaviour
             return;
         }
         sound.gameObject.SetActive(true);
+        sound.loop = false;
         Debug.Log($"Play sound: {name}");
         Instance.StartCoroutine(WaitForSoundEnd(sound, onEnd));
     }
@@ -47,6 +48,7 @@ public class SoundSources : MonoBehaviour
             return;
         }
         sound.gameObject.SetActive(true);
+        sound.loop = true;
         sound.Play();
         Debug.Log($"Play sound loop: {name}.");
     }

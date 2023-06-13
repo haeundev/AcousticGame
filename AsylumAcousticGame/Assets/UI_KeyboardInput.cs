@@ -8,7 +8,7 @@ public class UI_KeyboardInput : UI_Window
     private CharacterController _cc;
     private string _currentInput;
     [SerializeField] private TMP_InputField inputField;
-    public event Action OnComplete;
+    public Action OnComplete;
     
     private void Awake()
     {
