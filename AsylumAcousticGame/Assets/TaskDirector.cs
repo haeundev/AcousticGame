@@ -42,10 +42,11 @@ public class TaskDirector : MonoBehaviour
         switch (taskInfo.TaskType)
         {
             case "display_title":
+                SoundSources.StopAll();
                 win = UIWindows.GetWindow(1) as UI_Toast_Title;
                 ((UI_Toast_Title)win).SetTitle(taskInfo.ValueStr);
                 ((UI_Toast_Title)win).Open();
-                StartCoroutine(WaitForSec(3.5f, () =>
+                StartCoroutine(WaitForSec(3f, () =>
                 {
                     Debug.Log($"Title display done.");
                     CompleteCurrentTask();
