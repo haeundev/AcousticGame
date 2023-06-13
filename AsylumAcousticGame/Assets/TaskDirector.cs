@@ -10,7 +10,6 @@ using UnityEngine.SceneManagement;
 public class TaskDirector : MonoBehaviour
 {
     [SerializeField] private int initialTaskID = 1;
-    [SerializeField] private GameObject endScreen;
     public static TaskDirector Instance;
     public TaskInfos taskInfos;
     private List<TaskInfo> _tasks;
@@ -198,7 +197,7 @@ public class TaskDirector : MonoBehaviour
         var player = GameObject.Find("--- Player");
         var cc = player.GetComponentInChildren<CharacterController>();
         cc.enabled = false;
-        endScreen.gameObject.SetActive(true);
+        EndScreen.Show();
         SceneManager.LoadSceneAsync("EndingScene");
     }
 }
