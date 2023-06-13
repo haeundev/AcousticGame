@@ -75,7 +75,7 @@ MonoBehaviour:
     ValueStr: Office
     SoundStop: 
     IsInstant: 0
-    EndActions: 
+    EndActions: (stop_sound, 5)(stop_sound, 6)
   - ID: 8
     Group: 200
     TaskType: play_sound_loop
@@ -120,7 +120,7 @@ MonoBehaviour:
     ValueStr: Day Room
     SoundStop: 
     IsInstant: 0
-    EndActions: 
+    EndActions: (stop_sound, 10)(stop_sound, 11)
   - ID: 13
     Group: 300
     TaskType: play_sound_loop
@@ -160,12 +160,12 @@ MonoBehaviour:
   - ID: 17
     Group: 400
     TaskType: display_title
-    Hint: 
+    Hint: Listen carefully and count the numbers. Combine in a counterclockwise direction.
     ValueInt: 0
     ValueStr: Examination Room
     SoundStop: 
     IsInstant: 0
-    EndActions: 
+    EndActions: (stop_sound, 15)(stop_sound, 16)
   - ID: 18
     Group: 400
     TaskType: play_sound_loop
@@ -224,12 +224,13 @@ MonoBehaviour:
   - ID: 24
     Group: 500
     TaskType: display_title
-    Hint: 
+    Hint: What do you hear? Combining the first letters of what you hear will make
+      a sentence with meaning.
     ValueInt: 0
     ValueStr: Dining Room
     SoundStop: 
     IsInstant: 0
-    EndActions: 
+    EndActions: (stop_sound, 22)(stop_sound, 23)
   - ID: 25
     Group: 500
     TaskType: play_sound_loop
@@ -297,12 +298,12 @@ MonoBehaviour:
   - ID: 32
     Group: 600
     TaskType: display_title
-    Hint: 
+    Hint: Pay attention to the melody
     ValueInt: 0
     ValueStr: Stock
     SoundStop: 
     IsInstant: 0
-    EndActions: 
+    EndActions: (stop_sound, 30)(stop_sound, 31)
   - ID: 33
     Group: 600
     TaskType: play_sound_loop
@@ -333,7 +334,7 @@ MonoBehaviour:
   - ID: 36
     Group: 700
     TaskType: display_title
-    Hint: 
+    Hint: Speech in noise
     ValueInt: 0
     ValueStr: TV Room
     SoundStop: 
