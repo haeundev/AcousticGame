@@ -67,6 +67,7 @@ public class UI_Keypad : UI_Window
     public void Quit()
     {
         gameObject.SetActive(false);
-        SoundSources.PlayLoop("S3_PhoneMix");
+        if (TaskDirector.Instance.CurrentTask.Group == 200)
+            SoundSources.PlayLoop("S3_PhoneMix");
     }
 }
