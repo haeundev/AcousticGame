@@ -25,6 +25,7 @@ public class UI_Popup_Interaction : UI_Window
                     gameObject.SetActive(false);
                     break;
                 case 200:
+                case 300:
                     var win = UIWindows.GetWindow(2) as UI_Keypad;
                     win.Open();
                     gameObject.SetActive(false);

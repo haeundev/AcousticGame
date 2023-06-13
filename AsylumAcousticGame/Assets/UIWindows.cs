@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,6 +17,11 @@ public class UIWindows : MonoBehaviour
         {
             window.gameObject.SetActive(false);
         }
+    }
+
+    private void Start()
+    {
+        GetWindow(0).Open();
     }
 
     public static UI_Window GetWindow(int id)

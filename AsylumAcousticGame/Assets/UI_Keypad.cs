@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,12 +14,25 @@ public class UI_Keypad : UI_Window
             button.OnPressed += OnButtonPressed;
         }
     }
+    
+    private Dictionary<int, string> _passwordCorrectNums = new Dictionary<int, string>()
+    {
+        {200, "9874"},
+        {300, "8274"},
+        {400, "325"},
+        {500, "KILL"},
+        {600, "DEAF"},
+        {700, "LOOK BEHIND"},
+    };
 
     private void OnButtonPressed(string number)
     {
         _accumulatedNumbers += number;
+    }
 
-        if (_accumulatedNumbers.Contains("9874"))
+    public void OnClickEnter()
+    {
+        if (_accumulatedNumbers.Contains(_passwordCorrectNums[TaskDirector.Instance.CurrentTask.ID]))
         {
             gameObject.SetActive(false);
             TaskDirector.Instance.CompleteCurrentTask();
@@ -39,6 +50,8 @@ public class UI_Keypad : UI_Window
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        
+        _accumulatedNumbers = "";
         
         if (CameraController.Instance != default)
             CameraController.Instance.enabled = false;

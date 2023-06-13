@@ -14,7 +14,6 @@ public class TaskDirector : MonoBehaviour
     public TaskInfos taskInfos;
     private List<TaskInfo> _tasks;
     public TaskInfo CurrentTask { get; private set; }
-    public int currentGroup;
     private event Action<TaskInfo> OnTaskAcquired;
 
     private void Start()
@@ -179,6 +178,7 @@ public class TaskDirector : MonoBehaviour
         player.transform.position = pos;
         player.transform.rotation = posObj.transform.rotation;
         Camera.main.gameObject.AddComponent<ColorScreenFadeInCamera>();
+        Debug.Log($"Spawn player to {value}");
         yield break;
     }
 
