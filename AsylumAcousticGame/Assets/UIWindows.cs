@@ -32,7 +32,6 @@ public class UIWindows : MonoBehaviour
         if (found == default)
         {
             Debug.LogError($"Can't find window of ID: {id}");
-            Application.Quit();
             return default;
         }
         return found;

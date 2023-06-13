@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/OpeningScene.unity
+    guid: ae51034cdcba12848aa9c0bec566ee77
+  - enabled: 1
     path: Assets/Abandoned_Asylum/InGame.unity
     guid: 30fb6719a9eb1d84a807a42d598b16f8
   - enabled: 1
