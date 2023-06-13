@@ -10,19 +10,14 @@ public class UI_Keypad : UI_Window
     {
         var buttons = GetComponentsInChildren<KeypadSoundPlayer>().ToList();
         foreach (var button in buttons)
-        {
             button.OnPressed += OnButtonPressed;
-        }
     }
     
-    private Dictionary<int, string> _passwordCorrectNums = new Dictionary<int, string>()
+    private readonly Dictionary<int, string> _passwordCorrectNums = new()
     {
         {200, "9874"},
         {300, "8274"},
         {400, "325"},
-        {500, "KILL"},
-        {600, "DEAF"},
-        {700, "LOOK BEHIND"},
     };
 
     private void OnButtonPressed(string number)

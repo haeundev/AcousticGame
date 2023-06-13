@@ -13,6 +13,10 @@ public class Footstep : MonoBehaviour
 
     private void Update()
     {
+        var keyboardInput = UIWindows.GetWindow(6);
+        if (keyboardInput.gameObject.activeSelf)
+            return;
+        
         if (Input.GetKey(KeyCode.W)
             || Input.GetKey(KeyCode.A)
             || Input.GetKey(KeyCode.S)

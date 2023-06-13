@@ -20,7 +20,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: Guard Room
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: 
   - ID: 2
     Group: 100
@@ -29,7 +29,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S1_PhoneRinging
     SoundStop: S1_PhoneRinging
-    NextTaskTrigger: collision
+    IsInstant: 0
     EndActions: 
   - ID: 3
     Group: 100
@@ -38,7 +38,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S2_InstrNarrative
     SoundStop: 
-    NextTaskTrigger: sound_end
+    IsInstant: 0
     EndActions: 
   - ID: 4
     Group: 100
@@ -47,7 +47,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S2_PlayerSaying
     SoundStop: 
-    NextTaskTrigger: sound_end
+    IsInstant: 0
     EndActions: (spawn, 200)
   - ID: 5
     Group: 200
@@ -56,7 +56,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: door_close
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: 
   - ID: 6
     Group: 200
@@ -65,7 +65,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: Office
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: 
   - ID: 7
     Group: 200
@@ -74,7 +74,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S3_PhoneMix
     SoundStop: S3_PhoneMix
-    NextTaskTrigger: collision
+    IsInstant: 0
     EndActions: 
   - ID: 8
     Group: 200
@@ -83,7 +83,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: door_open
     SoundStop: 
-    NextTaskTrigger: sound_end
+    IsInstant: 0
     EndActions: 
   - ID: 9
     Group: 200
@@ -92,7 +92,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: door_close
     SoundStop: 
-    NextTaskTrigger: sound_end
+    IsInstant: 0
     EndActions: (spawn, 300)(stop_sound, 7)
   - ID: 10
     Group: 300
@@ -101,7 +101,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: Day Room
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: (stop_sound, 7)
   - ID: 11
     Group: 300
@@ -110,7 +110,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: R3_DayroomAmb
     SoundStop: 
-    NextTaskTrigger: trigger_instant
+    IsInstant: 1
     EndActions: 
   - ID: 12
     Group: 300
@@ -119,7 +119,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: R3_RadioMix
     SoundStop: 
-    NextTaskTrigger: collision
+    IsInstant: 0
     EndActions: 
   - ID: 13
     Group: 300
@@ -128,7 +128,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: door_open
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: 
   - ID: 14
     Group: 300
@@ -137,7 +137,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: door_close
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: (spawn, 400)
   - ID: 15
     Group: 400
@@ -146,7 +146,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: Examination Room
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: 
   - ID: 16
     Group: 400
@@ -155,7 +155,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S4_WaterDrops
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 1
     EndActions: 
   - ID: 17
     Group: 400
@@ -164,7 +164,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S4_FemaleScream
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 1
     EndActions: 
   - ID: 18
     Group: 400
@@ -173,7 +173,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S4_HospitalVentilator
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 1
     EndActions: 
   - ID: 19
     Group: 400
@@ -182,26 +182,27 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S4_FakeDarkLaugh
     SoundStop: 
-    NextTaskTrigger: collision
+    IsInstant: 0
     EndActions: 
   - ID: 20
     Group: 400
-    TaskType: ui_password
+    TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: door_open
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: 
   - ID: 21
     Group: 400
-    TaskType: door_open
+    TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: door_close
     SoundStop: 
-    NextTaskTrigger: 
-    EndActions: (spawn, 500)
+    IsInstant: 0
+    EndActions: (spawn, 500)(stop_sound, 16)(stop_sound, 17)(stop_sound, 18)(stop_sound,
+      19)
   - ID: 22
     Group: 500
     TaskType: display_title
@@ -209,7 +210,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: Dining Room
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: 
   - ID: 23
     Group: 500
@@ -218,7 +219,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S5_Laugh
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 1
     EndActions: 
   - ID: 24
     Group: 500
@@ -227,7 +228,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S5_Kettle
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 1
     EndActions: 
   - ID: 25
     Group: 500
@@ -236,7 +237,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S5_IceCubes
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 1
     EndActions: 
   - ID: 26
     Group: 500
@@ -245,7 +246,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S5_Lullaby
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 1
     EndActions: 
   - ID: 27
     Group: 500
@@ -254,26 +255,27 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S5_IWKY
     SoundStop: 
-    NextTaskTrigger: collision
+    IsInstant: 0
     EndActions: 
   - ID: 28
     Group: 500
-    TaskType: ui_password
+    TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: door_open
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: 
   - ID: 29
     Group: 500
-    TaskType: door_open
+    TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: door_close
     SoundStop: 
-    NextTaskTrigger: 
-    EndActions: (spawn, 600)
+    IsInstant: 0
+    EndActions: (spawn, 600)(stop_sound, 23)(stop_sound, 24)(stop_sound, 25)(stop_sound,
+      26)(stop_sound, 27)
   - ID: 30
     Group: 600
     TaskType: display_title
@@ -281,7 +283,7 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: Stock
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: 
   - ID: 31
     Group: 600
@@ -290,68 +292,59 @@ MonoBehaviour:
     ValueInt: 0
     ValueStr: S6_RP
     SoundStop: 
-    NextTaskTrigger: collision
+    IsInstant: 0
     EndActions: 
   - ID: 32
     Group: 600
-    TaskType: ui_password
+    TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: door_open
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: 
   - ID: 33
     Group: 600
-    TaskType: door_open
+    TaskType: play_sound
+    Hint: 
+    ValueInt: 0
+    ValueStr: door_close
+    SoundStop: 
+    IsInstant: 0
+    EndActions: (spawn, 700)(stop_sound, 31)
+  - ID: 34
+    Group: 700
+    TaskType: display_title
     Hint: 
     ValueInt: 0
     ValueStr: TV Room
     SoundStop: 
-    NextTaskTrigger: 
-    EndActions: (spawn, 700)
-  - ID: 34
-    Group: 700
-    TaskType: play_sound
-    Hint: 
-    ValueInt: 0
-    ValueStr: S7_Alphabet
-    SoundStop: 
-    NextTaskTrigger: sound_end
+    IsInstant: 0
     EndActions: 
   - ID: 35
     Group: 700
     TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: S7_Child
+    ValueStr: S7_Alphabet
     SoundStop: 
-    NextTaskTrigger: sound_end
+    IsInstant: 0
     EndActions: 
   - ID: 36
     Group: 700
-    TaskType: ui_popup_interaction
+    TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: S7_Child
     SoundStop: 
-    NextTaskTrigger: spaceKey
+    IsInstant: 0
     EndActions: 
   - ID: 37
-    Group: 700
-    TaskType: ui_password
-    Hint: 
-    ValueInt: 0
-    ValueStr: 
-    SoundStop: 
-    NextTaskTrigger: 
-    EndActions: 
-  - ID: 38
     Group: 700
     TaskType: door_open
     Hint: 
     ValueInt: 0
     ValueStr: 
     SoundStop: 
-    NextTaskTrigger: 
+    IsInstant: 0
     EndActions: (end_game)

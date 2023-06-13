@@ -39,6 +39,9 @@ public class PhysicalCC : MonoBehaviour
 
 	private void Update()
 	{
+		if (cc.enabled == false)
+			return;
+		
 		GroundCheck();
 
 		if (isGround)

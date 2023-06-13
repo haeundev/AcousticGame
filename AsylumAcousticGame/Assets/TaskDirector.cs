@@ -67,7 +67,7 @@ public class TaskDirector : MonoBehaviour
             
             case "play_sound_loop":
                 SoundSources.PlayLoop(taskInfo.ValueStr);
-                if (taskInfo.NextTaskTrigger == "trigger_instant")
+                if (taskInfo.IsInstant)
                     CompleteCurrentTask();
                 break;
             
@@ -107,6 +107,10 @@ public class TaskDirector : MonoBehaviour
     
     private void Update()
     {
+        var keyboardInput = UIWindows.GetWindow(6);
+        if (keyboardInput.gameObject.activeSelf)
+            return;
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             ResetToFirstTaskOfGroup();

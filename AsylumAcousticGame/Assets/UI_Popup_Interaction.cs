@@ -26,8 +26,22 @@ public class UI_Popup_Interaction : UI_Window
                     break;
                 case 200:
                 case 300:
-                    var win = UIWindows.GetWindow(2) as UI_Keypad;
-                    win.Open();
+                case 400:
+                    var keypad = UIWindows.GetWindow(2) as UI_Keypad;
+                    keypad.Open();
+                    gameObject.SetActive(false);
+                    break;
+                case 500:
+                case 600:
+                case 700:
+                    var keyboardInput = UIWindows.GetWindow(6) as UI_KeyboardInput;
+                    keyboardInput.Open();
+                    keyboardInput.OnComplete += () =>
+                    {
+                        TaskDirector.Instance.CompleteCurrentTask();
+                        Destroy(_source);
+                        gameObject.SetActive(false);
+                    };
                     gameObject.SetActive(false);
                     break;
             }
