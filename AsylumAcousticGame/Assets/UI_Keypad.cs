@@ -32,7 +32,7 @@ public class UI_Keypad : UI_Window
 
     public void OnClickEnter()
     {
-        if (_accumulatedNumbers.Contains(_passwordCorrectNums[TaskDirector.Instance.CurrentTask.ID]))
+        if (_accumulatedNumbers.Contains(_passwordCorrectNums[TaskDirector.Instance.CurrentTask.Group]))
         {
             gameObject.SetActive(false);
             TaskDirector.Instance.CompleteCurrentTask();

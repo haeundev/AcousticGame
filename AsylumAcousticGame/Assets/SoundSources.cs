@@ -28,7 +28,7 @@ public class SoundSources : MonoBehaviour
             return;
         }
         sound.gameObject.SetActive(true);
-        Debug.Log($"Play {name}.");
+        Debug.Log($"Play sound: {name}");
         Instance.StartCoroutine(WaitForSoundEnd(sound, onEnd));
     }
 
@@ -48,7 +48,7 @@ public class SoundSources : MonoBehaviour
         }
         sound.gameObject.SetActive(true);
         sound.Play();
-        Debug.Log($"Play loop {name}.");
+        Debug.Log($"Play sound loop: {name}.");
     }
 
     public static void Stop(string name)
@@ -61,6 +61,7 @@ public class SoundSources : MonoBehaviour
             Debug.LogError($"Cannot Stop {name}. No object found.");
             return;
         }
+        Debug.Log($"Stop sound: {name}.");
         sound.Stop();
     }
     
