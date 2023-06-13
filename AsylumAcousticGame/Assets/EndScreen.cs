@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EndScreen : MonoBehaviour
@@ -9,6 +7,8 @@ public class EndScreen : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        GetComponentInChildren<CameraFadeEffect>().onComplete += () => gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
     
     public static void Show()

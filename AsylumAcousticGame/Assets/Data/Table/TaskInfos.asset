@@ -33,7 +33,7 @@ MonoBehaviour:
     EndActions: 
   - ID: 3
     Group: 100
-    TaskType: play_sound
+    TaskType: skip
     Hint: 
     ValueInt: 0
     ValueStr: S2_InstrNarrative
@@ -42,7 +42,7 @@ MonoBehaviour:
     EndActions: 
   - ID: 4
     Group: 100
-    TaskType: play_sound
+    TaskType: skip
     Hint: 
     ValueInt: 0
     ValueStr: S2_PlayerSaying

@@ -30,14 +30,6 @@ public class TaskDirector : MonoBehaviour
 
     private void InitTask(TaskInfo taskInfo)
     {
-
-        // var prevGroup = currentGroup;
-        // if (prevGroup != currentGroup)
-        // {
-        //     currentGroup = taskInfo.Group;
-        //     StartCoroutine(SpawnPlayer(taskInfo.Group.ToString()));
-        // }
-        
         UI_Window win;
         switch (taskInfo.TaskType)
         {
@@ -48,18 +40,10 @@ public class TaskDirector : MonoBehaviour
                 ((UI_Toast_Title)win).Open();
                 StartCoroutine(WaitForSec(3f, () =>
                 {
-                    Debug.Log($"Title display done.");
+                    Debug.Log("Title display done.");
                     CompleteCurrentTask();
                 }));
                 break;
-            
-            // case "silence":
-            //     StartCoroutine(WaitForSec(2, () =>
-            //     {
-            //         Debug.Log($"Silence done.");
-            //         CompleteCurrentTask();
-            //     }));
-            //     break;
             
             case "play_sound":
                 SoundSources.Play(taskInfo.ValueStr, CompleteCurrentTask);
@@ -71,18 +55,8 @@ public class TaskDirector : MonoBehaviour
                     CompleteCurrentTask();
                 break;
             
-            // case "ui_keypad":
-            //     win = UIWindows.GetWindow(2);
-            //     win.Open();
-            //     break;
-            
-            // case "ui_password":
-            //     win = UIWindows.GetWindow(3);
-            //     win.Open();
-            //     break;
-
-            case "door_open":
-                
+            case "skip":
+                CompleteCurrentTask();
                 break;
         }
     }
@@ -133,6 +107,8 @@ public class TaskDirector : MonoBehaviour
     {
         StartCoroutine(RunEndActions(() =>
         {
+            if (_tasks == default)
+                return;
             CurrentTask = _tasks.FirstOrDefault(p => p.ID == CurrentTask.ID + 1);
             OnTaskAcquired?.Invoke(CurrentTask);
         }));

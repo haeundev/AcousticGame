@@ -30,6 +30,13 @@ public class SoundSources : MonoBehaviour
         sound.gameObject.SetActive(true);
         sound.loop = false;
         Debug.Log($"Play sound: {name}");
+        
+        // 페이드아웃 하드코딩
+        if (name == "door_close")
+        {
+            CloseScreen.Show();
+        }
+        
         Instance.StartCoroutine(WaitForSoundEnd(sound, onEnd));
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class CameraFadeEffect : MonoBehaviour
     public float fadeInTime = 2f;
     public float delayTime = 2f;
     public float fadeOutTime = 2f;
+    public event Action onComplete;
 
     private void OnEnable()
     {
@@ -35,5 +37,6 @@ public class CameraFadeEffect : MonoBehaviour
         }
 
         canvasGroup.alpha = 1;
+        onComplete?.Invoke();
     }
 }
