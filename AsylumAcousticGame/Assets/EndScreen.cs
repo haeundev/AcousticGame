@@ -1,3 +1,5 @@
+using System;
+using UniRx;
 using UnityEngine;
 
 public class EndScreen : MonoBehaviour
@@ -7,7 +9,13 @@ public class EndScreen : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        GetComponentInChildren<CameraFadeEffect>().onComplete += () => gameObject.SetActive(false);
+        GetComponentInChildren<CameraFadeEffect>().onComplete += () =>
+        {
+            Observable.Timer(TimeSpan.FromSeconds(0.3f)).Subscribe(_ =>
+            {
+                gameObject.SetActive(false);
+            });
+        };
         gameObject.SetActive(false);
     }
     

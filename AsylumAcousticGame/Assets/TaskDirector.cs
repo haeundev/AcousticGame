@@ -30,19 +30,10 @@ public class TaskDirector : MonoBehaviour
 
     private void InitTask(TaskInfo taskInfo)
     {
-        UI_Window win;
         switch (taskInfo.TaskType)
         {
             case "display_title":
-                SoundSources.StopAll();
-                win = UIWindows.GetWindow(1) as UI_Toast_Title;
-                ((UI_Toast_Title)win).SetTitle(taskInfo.ValueStr);
-                ((UI_Toast_Title)win).Open();
-                StartCoroutine(WaitForSec(3f, () =>
-                {
-                    Debug.Log("Title display done.");
-                    CompleteCurrentTask();
-                }));
+                DisplayTitle(taskInfo);
                 break;
             
             case "play_sound":
@@ -61,11 +52,28 @@ public class TaskDirector : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitForSec(float sec, Action onEnd)
+    private void DisplayTitle(TaskInfo taskInfo)
     {
-        yield return new WaitForSeconds(sec);
-        onEnd?.Invoke();
+        SoundSources.StopAll();
+        StartCoroutine(coDisplayTitle(taskInfo));
     }
+
+    private IEnumerator coDisplayTitle(TaskInfo taskInfo)
+    {
+        yield return new WaitUntil(() => CloseScreen.Instance.IsClosing == false);
+        var win = UIWindows.GetWindow(1) as UI_Toast_Title;
+        win.SetTitle(taskInfo.ValueStr);
+        win.Open();
+        yield return new WaitForSeconds(3f);
+        Debug.Log("Title display done.");
+        CompleteCurrentTask();
+    }
+
+    // private IEnumerator WaitForSec(float sec, Action onEnd)
+    // {
+    //     yield return new WaitForSeconds(sec);
+    //     onEnd?.Invoke();
+    // }
     
     public void ResetToFirstTaskOfGroup()
     {
@@ -109,6 +117,11 @@ public class TaskDirector : MonoBehaviour
         {
             if (_tasks == default)
                 return;
+            if (CurrentTask == default)
+            {
+                EndGame();
+                return;
+            }
             CurrentTask = _tasks.FirstOrDefault(p => p.ID == CurrentTask.ID + 1);
             OnTaskAcquired?.Invoke(CurrentTask);
         }));
@@ -124,6 +137,8 @@ public class TaskDirector : MonoBehaviour
 
             yield return DoEndAction(values);
         }
+        
+        yield return new WaitUntil(() => CloseScreen.Instance.IsClosing == false);
         onDone?.Invoke();
     }
 
@@ -174,6 +189,5 @@ public class TaskDirector : MonoBehaviour
         var cc = player.GetComponentInChildren<CharacterController>();
         cc.enabled = false;
         EndScreen.Show();
-        SceneManager.LoadSceneAsync("EndingScene");
     }
 }

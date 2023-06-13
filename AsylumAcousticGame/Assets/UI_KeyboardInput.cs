@@ -31,6 +31,7 @@ public class UI_KeyboardInput : UI_Window
             gameObject.SetActive(false);
             OnComplete?.Invoke();
             inputField.text = "";
+            CloseScreen.Show();
         }
     }
     

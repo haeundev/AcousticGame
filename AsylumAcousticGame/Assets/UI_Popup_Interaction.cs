@@ -29,6 +29,10 @@ public class UI_Popup_Interaction : UI_Window
                 case 400:
                     SoundSources.Stop(TaskDirector.Instance.CurrentTask.SoundStop);
                     var keypad = UIWindows.GetWindow(2) as UI_Keypad;
+                    keypad.OnComplete += () =>
+                    {
+                        Destroy(_source);
+                    };
                     keypad.Open();
                     gameObject.SetActive(false);
                     break;

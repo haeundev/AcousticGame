@@ -36,6 +36,7 @@ public class UI_Keypad : UI_Window
             OnComplete?.Invoke();
             gameObject.SetActive(false);
             TaskDirector.Instance.CompleteCurrentTask();
+            CloseScreen.Show();
         }
     }
 

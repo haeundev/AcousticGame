@@ -59,7 +59,7 @@ MonoBehaviour:
     IsInstant: 0
     EndActions: 
   - ID: 6
-    Group: 200
+    Group: 100
     TaskType: play_sound
     Hint: 
     ValueInt: 0
