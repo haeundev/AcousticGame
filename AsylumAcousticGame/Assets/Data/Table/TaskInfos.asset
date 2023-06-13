@@ -102,7 +102,7 @@ MonoBehaviour:
     ValueStr: Day Room
     SoundStop: 
     NextTaskTrigger: 
-    EndActions: (stop_sound, 8)(stop_sound, 9)
+    EndActions: (stop_sound, 7)
   - ID: 11
     Group: 300
     TaskType: play_sound_loop
@@ -123,19 +123,19 @@ MonoBehaviour:
     EndActions: 
   - ID: 13
     Group: 300
-    TaskType: ui_password
+    TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: door_open
     SoundStop: 
     NextTaskTrigger: 
     EndActions: 
   - ID: 14
     Group: 300
-    TaskType: door_open
+    TaskType: play_sound
     Hint: 
     ValueInt: 0
-    ValueStr: 
+    ValueStr: door_close
     SoundStop: 
     NextTaskTrigger: 
     EndActions: (spawn, 400)

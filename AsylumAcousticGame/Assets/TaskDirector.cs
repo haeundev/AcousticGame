@@ -150,7 +150,7 @@ public class TaskDirector : MonoBehaviour
         {
             case "stop_sound":
                 var taskToStopAudio = _tasks.Find(p => p.ID == int.Parse(values[1]));
-                GameObject.Find($"{taskToStopAudio.ValueStr}").GetComponentInChildren<AudioSource>()?.Stop();
+                GameObject.Find($"{taskToStopAudio.ValueStr}")?.GetComponentInChildren<AudioSource>()?.Stop();
                 break;
 
             case "spawn":
@@ -168,6 +168,9 @@ public class TaskDirector : MonoBehaviour
 
     private IEnumerator SpawnPlayer(string value)
     {
+        var player = GameObject.Find("--- Player");
+        var cc = player.GetComponentInChildren<CharacterController>();
+        cc.enabled = false;
         var posObj = GameObject.Find(value);
         if (posObj == default)
         {
@@ -175,11 +178,11 @@ public class TaskDirector : MonoBehaviour
             yield break;
         }
         var pos = posObj.transform.position;
-        var player = GameObject.FindWithTag("Player");
-        player.transform.position = pos;
-        player.transform.rotation = posObj.transform.rotation;
+        var rot = posObj.transform.rotation;
+        player.transform.SetPositionAndRotation(pos, rot);
         Camera.main.gameObject.AddComponent<ColorScreenFadeInCamera>();
         Debug.Log($"Spawn player to {value}");
+        cc.enabled = true;
         yield break;
     }
 
